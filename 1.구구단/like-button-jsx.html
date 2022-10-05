@@ -1,0 +1,58 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!--<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
+  <!--<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>-->
+  <script type="text/babel">
+    'use strict';
+
+    // const e = React.createElement;
+
+    // class LikeButton extends React.Component {
+    //   constructor(props) {
+    //     super(props);
+    //     this.state = {liked: false};
+    //   }
+    //   render() {
+    //     if (this.state.liked) {
+    //       return 'You Liked this.';
+    //     }
+
+    //     // return e('button', {onClick: () => this.setState({liked: true})}, 'Like');
+    //     return (
+    //       <button onClick={() => this.setState({liked: true})}>
+    //         {this.state.liked ? 'Liked' : 'Like!!!'}
+    //       </button>
+    //     );
+    //   }
+    // }
+
+    function LikeButton() {
+      const [liked, setLiked] = React.useState(false);
+      if (liked) {
+        return 'You Liked this.';
+      }
+
+      return (
+        <button onClick={() => { setLiked(true); }}>Like</button>
+      );
+    }
+
+// pop, push, shift, unshift, splice -> 배열을 직접적으로 수정
+// concat,slice -> 새로운 배열을 만들어냄
+
+  </script>
+  <script type="text/babel">
+    // ReactDOM.render(<LikeButton />, document.getElementById('root')); // React 17버전
+    ReactDOM.createRoot(document.getElementById('root')).render(<LikeButton />); // React 18버전
+  </script>
+</body>
+
+</html>
