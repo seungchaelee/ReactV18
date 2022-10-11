@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 
 export default function WordRelay() {
   const [word, setWord] = useState('이승채');
   const [value, setValue] = useState('');
   const [result, setResult] = useState('');
-  const inputRef = React.useRef(null);
+  const inputRef = useRef(null);
 
   const onChangeInput = (e) => {
     setValue(e.target.value);
@@ -40,5 +40,3 @@ export default function WordRelay() {
     </>
   );
 };
-
-// export default WordRelay;
